@@ -12,6 +12,7 @@ import { HumanResourcesComponent } from './components/human-resources/human-reso
 import { ProductionComponent } from './components/production/production.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ShowroomComponent } from './components/showroom/showroom.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShowroomComponent } from './components/showroom/showroom.component';
     HumanResourcesComponent,
     ProductionComponent,
     ContactComponent,
-    ShowroomComponent
+    ShowroomComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
