@@ -1,0 +1,37 @@
+html {
+    scroll-behavior: smooth;
+  } 
+
+  .carousel-cell {
+    width: 34%;
+    height: 400px;
+    margin-right: 10px; 
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+
+  .carousel-cell-2 {
+    width: 34%;
+    height: 400px;
+    margin-right: 10px; 
+    border-radius: 5px;
+    counter-increment: carousel-cell-2;
+  }
+
+  .carousel.is-fullscreen .carousel-cell {
+    height: 100%;
+  }
+
+  .carousel-cell a{
+    z-index: 9;
+    color: #000;
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-link {
+    border: 1px solid #0000003b !important;
+  } 
