@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
-## Development server
+## Yapılıcak
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Çoğu resim (marka kıyafet vs.) Back-Ende taşınacak, yönetim paneli eklenecek, sayfa cssleri düzenlenicek.
 
 ## Code scaffolding
 

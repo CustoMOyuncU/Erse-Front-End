@@ -1,3 +1,4 @@
+$(window).load(function(){
 (function ($) {
   "use strict";
   // preloader
@@ -14,7 +15,7 @@
   //  }
  // });
 
-  window.onload = function(){
+ 
 
     var button = document.getElementById('accept')
 
@@ -23,7 +24,8 @@
     $("#cookieSection").css("display","none");
 
     });
-  }
+
+  
 
 
   
@@ -1068,4 +1070,4 @@
   });
 
 
-})(jQuery);
+})(jQuery);})

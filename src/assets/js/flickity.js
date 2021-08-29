@@ -16,7 +16,7 @@
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
-
+window.onload = function(){
 ( function( window, factory ) {
   // universal module definition
   /*jshint strict: false */ /* globals define, module, require */
@@ -4582,3 +4582,4 @@ return Flickity;
 
 }));
 
+}
