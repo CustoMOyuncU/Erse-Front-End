@@ -77,10 +77,16 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-prev
-{
-    left: -25px;
+.fa-chevron-right{
+    margin-top: 39px;
+    display: inline-block;
 }
+.fa-chevron-left{
+    margin-top: 39px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
 [dir='rtl'] .slick-prev
 {
     right: -25px;

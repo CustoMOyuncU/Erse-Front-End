@@ -16,7 +16,9 @@
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
-window.onload = function(){
+$(window).load(function(){
+if(document.title=="ErseTekstil"){
+
 ( function( window, factory ) {
   // universal module definition
   /*jshint strict: false */ /* globals define, module, require */
@@ -4581,5 +4583,5 @@ proto.imagesLoaded = function() {
 return Flickity;
 
 }));
-
 }
+})

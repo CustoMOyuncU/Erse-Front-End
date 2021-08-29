@@ -7,6 +7,8 @@
   margin: auto;
 }
 
+
+
 .news-area{
   margin-top: 150px;
 }
@@ -115,4 +117,7 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+#lightbox{
+  display: none;
 }

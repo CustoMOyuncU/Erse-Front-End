@@ -9,6 +9,7 @@ import { HumanResourcesComponent } from './components/human-resources/human-reso
 import { MainComponent } from './components/main/main.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ProductionComponent } from './components/production/production.component';
+import { ShowroomComponent } from './components/showroom/showroom.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:MainComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"certificate",component:CertificateComponent},
   {path:"human-resources",component:HumanResourcesComponent},
   {path:"production",component:ProductionComponent},
-  {path:"contact",component:ContactComponent}
+  {path:"contact",component:ContactComponent},
+  {path:"showroom",component:ShowroomComponent}
 ];
 
 @NgModule({
