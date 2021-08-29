@@ -15,7 +15,7 @@ $(window).load(function(){
   //  }
  // });
 
- 
+
 
     var button = document.getElementById('accept')
 
