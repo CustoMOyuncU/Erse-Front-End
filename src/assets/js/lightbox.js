@@ -14,7 +14,7 @@
 
 // Uses Node, AMD or browser globals to create a module.
 window.onload = function(){
--
+
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {

@@ -16,12 +16,12 @@
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
-<<<<<<< HEAD
-window.onload = function(){
 
-=======
+-
+
+
 $(window).load(function(){
->>>>>>> 5432a4307918b469a4c9a58331d36ccc1a26ccf5
+
 if(document.title=="ErseTekstil"){
 
 ( function( window, factory ) {
@@ -4589,8 +4589,9 @@ return Flickity;
 
 }));
 }
-<<<<<<< HEAD
+
 }
-=======
-})
->>>>>>> 5432a4307918b469a4c9a58331d36ccc1a26ccf5
+
+
+
+)

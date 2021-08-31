@@ -1,4 +1,5 @@
 $(window).load(function(){
+ 
 (function ($) {
   "use strict";
   // preloader
@@ -14,11 +15,8 @@ $(window).load(function(){
   //    $("#add-sticky").addClass("sticky");
   //  }
  // });
+ 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5432a4307918b469a4c9a58331d36ccc1a26ccf5
 
     var button = document.getElementById('accept')
 
