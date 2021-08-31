@@ -16,7 +16,8 @@
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
-$(window).load(function(){
+window.onload = function(){
+
 if(document.title=="ErseTekstil"){
 
 ( function( window, factory ) {
@@ -4584,4 +4585,4 @@ return Flickity;
 
 }));
 }
-})
+}

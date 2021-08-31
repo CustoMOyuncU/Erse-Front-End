@@ -1,0 +1,57 @@
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <app-side-bar></app-side-bar>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                
+
+                <h5>Renkler</h5>
+                <div class="row">
+
+                    <table class="table table-striped col-3">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Renk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let color of colors">
+                                <td scope="col">{{color.colorId}}</td>
+                                <td scope="col">{{color.colorName}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <form [formGroup]="colorAddForm" class="col">
+                        <h3>Ekle</h3>
+
+                        <div class="form-group w-50 mt-3">
+                            <label for="colorName"><b>Renk ismi</b></label>
+                            <input type="text" class="form-control" id="colorName" placeholder="Color Name"
+                                formControlName="colorName">
+                        </div>
+                        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                    </form>
+
+
+
+                    <form [formGroup]="colorDeleteForm" class="col">
+                        <h3>Sil</h3>
+                        <div class="form-group w-50 mt-3">
+                            <label for="colorId"><b>Renk ID</b></label>
+                            <input type="number" class="form-control" id="colorId" placeholder="Color ID"
+                                formControlName="colorId">
+                        </div>
+                        <button class="btn btn-fill btn-danger" (click)="delete()">Sil</button>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>

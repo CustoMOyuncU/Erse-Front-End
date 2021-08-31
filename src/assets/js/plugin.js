@@ -16,7 +16,6 @@ $(window).load(function(){
  // });
 
 
-
     var button = document.getElementById('accept')
 
     $("#accept").on("click",function(){

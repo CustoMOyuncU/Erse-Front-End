@@ -1,0 +1,58 @@
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <app-side-bar></app-side-bar>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+               
+                <h5>Markalar</h5>
+                <div class="row">
+
+                    <table class="table table-striped col-3">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Kategori</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let brand of brands">
+                                <td scope="col">{{brand.brandId}}</td>
+                                <td scope="col">{{brand.brandName}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <form [formGroup]="brandAddForm" class="col">
+                        <h3>Ekle</h3>
+
+                        <div class="form-group w-50 mt-3">
+                            <label for="brandName"><b>Marka ismi</b></label>
+                            <input type="text" class="form-control" id="brandName" placeholder="Brand Name"
+                                formControlName="brandName">
+                        </div>
+                        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                    </form>
+
+
+
+                    <form [formGroup]="brandDeleteForm" class="col">
+                        <h3>Sil</h3>
+                        <div class="form-group w-50 mt-3">
+                            <label for="brandId"><b>Marka ID</b></label>
+                            <input type="number" class="form-control" id="brandId" placeholder="Brand ID"
+                                formControlName="brandId">
+                        </div>
+                        <button class="btn btn-fill btn-danger" (click)="delete()">Sil</button>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>

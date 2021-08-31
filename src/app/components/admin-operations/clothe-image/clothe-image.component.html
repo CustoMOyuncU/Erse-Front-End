@@ -1,0 +1,64 @@
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <app-side-bar></app-side-bar>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+
+                <h5>Kıyafetler</h5>
+                <div class="row">
+
+                    <table class="table table-striped col-3 text-center">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Kıyafet ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let clotheImage of clotheImages">
+                                <td scope="col">{{clotheImage.id}}</td>
+                                <td scope="col">{{clotheImage.clotheId}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <form [formGroup]="clotheImageAddForm" class="col">
+                        <h3>Ekle</h3>
+
+
+                        <div class="form-group w-75 mt-3">
+                            <label for="exampleFormControlFile1">Example file input</label>
+                            <input type="file" formControlName="image" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+
+
+                        <div class="form-group w-50 mt-3">
+                            <label for="clotheImageName"><b>Renk ID</b></label>
+                            <input type="number" class="form-control" id="clotheImageName" placeholder="Color ID"
+                                formControlName="clotheId">
+                        </div>
+                        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                    </form>
+
+
+
+                    <form [formGroup]="clotheImageDeleteForm" class="col">
+                        <h3>Sil</h3>
+                        <div class="form-group w-50 mt-3">
+                            <label for="clotheImageId"><b>Kıyafet ID</b></label>
+                            <input type="number" class="form-control" id="clotheImageId" placeholder="ClotheImage ID"
+                                formControlName="clotheImageId">
+                        </div>
+                        <button class="btn btn-fill btn-danger">Sil</button>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>
