@@ -13,6 +13,9 @@
  */
 
 // Uses Node, AMD or browser globals to create a module.
+window.onload = function(){
+-
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -552,3 +555,4 @@
 
   return new Lightbox();
 }));
+}

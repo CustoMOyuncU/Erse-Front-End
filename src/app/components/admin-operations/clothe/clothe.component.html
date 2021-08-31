@@ -1,0 +1,65 @@
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <app-side-bar></app-side-bar>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                
+
+                <h5>Kıyafetler</h5>
+                <div class="row">
+
+                    <table class="table table-striped col-3 text-center">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Kategori ID</th>
+                                <th scope="col">Renk ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let clothe of clothes">
+                                <td scope="col">{{clothe.clotheId}}</td>
+                                <td scope="col">{{clothe.categoryId}}</td>
+                                <td scope="col">{{clothe.colorId}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <form [formGroup]="clotheAddForm" class="col">
+                        <h3>Ekle</h3>
+
+                        <div class="form-group w-50 mt-3">
+                            <label for="clotheName"><b>Kategori ID</b></label>
+                            <input type="number" class="form-control" id="clotheName" placeholder="Category ID"
+                                formControlName="categoryId">
+                        </div>
+
+                        <div class="form-group w-50 mt-3">
+                            <label for="clotheName"><b>Renk ID</b></label>
+                            <input type="number" class="form-control" id="clotheName" placeholder="Color ID"
+                                formControlName="colorId">
+                        </div>
+                        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                    </form>
+
+
+
+                    <form [formGroup]="clotheDeleteForm" class="col">
+                        <h3>Sil</h3>
+                        <div class="form-group w-50 mt-3">
+                            <label for="clotheId"><b>Kıyafet ID</b></label>
+                            <input type="number" class="form-control" id="clotheId" placeholder="Clothe ID"
+                                formControlName="clotheId">
+                        </div>
+                        <button class="btn btn-fill btn-danger" (click)="delete()">Sil</button>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>

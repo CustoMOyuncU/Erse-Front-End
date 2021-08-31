@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { BrandComponent } from './components/admin-operations/brand/brand.component';
+import { CategoryComponent } from './components/admin-operations/category/category.component';
+import { ClotheImageComponent } from './components/admin-operations/clothe-image/clothe-image.component';
+import { ClotheComponent } from './components/admin-operations/clothe/clothe.component';
+import { ColorComponent } from './components/admin-operations/color/color.component';
 import { CertificateComponent } from './components/certificate/certificate.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -20,7 +26,13 @@ const routes: Routes = [
   {path:"human-resources",component:HumanResourcesComponent},
   {path:"production",component:ProductionComponent},
   {path:"contact",component:ContactComponent},
-  {path:"showroom",component:ShowroomComponent}
+  {path:"showroom",component:ShowroomComponent},
+  {path:"admin-login",component:AdminLoginComponent},
+  {path:"admin/brand",component:BrandComponent},
+  {path:"admin/color",component:ColorComponent},
+  {path:"admin/categories",component:CategoryComponent},
+  {path:"admin/clothe",component:ClotheComponent},
+  {path:"admin/clothe-image",component:ClotheImageComponent}
 ];
 
 @NgModule({

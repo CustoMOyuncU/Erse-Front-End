@@ -47,12 +47,12 @@
   
         <div class="carousel" data-flickity='{ "autoPlay": 2000, "pauseAutoPlayOnHover": true, "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false}'>
 
-          <div class="carousel-cell">   
-            <img src="assets\img\pr\k1.jpg" class="w-100" > <a href="assets\img\pr\k1.jpg" data-lightbox="q1" >Önizlemek için Tıklayınız</a>
+          <div class="carousel-cell" *ngFor="let clothe of womenClothes">   
+            <app-clothe-slider [clothe]="clothe"></app-clothe-slider>
           </div>  
 
 
-          <div class="carousel-cell">   
+          <!-- <div class="carousel-cell">   
             <img src="assets\img\pr\k2.jpg" class="w-100"  > <a href="assets\img\pr\k2.jpg" data-lightbox="q1" >Önizlemek için Tıklayınız</a>
           </div>  
 
@@ -88,7 +88,7 @@
 
           <div class="carousel-cell">   
             <img src="assets\img\pr\k9.jpg" class="w-100"  > <a href="assets\img\pr\k9.jpg" data-lightbox="q1" >Önizlemek için Tıklayınız</a>
-          </div>  
+          </div>   -->
         </div>
 
       <!-- Slider Wrapper End -->
@@ -96,6 +96,8 @@
     </div>
   </div>
   </section>
+
+  
   <!-- Team Slider End --> 
 
     <!-- course area -->

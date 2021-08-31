@@ -1,0 +1,55 @@
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <app-side-bar></app-side-bar>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h5>Kategoriler</h5>
+            <div class="row">
+
+                <table class="table table-striped col-3">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Kategori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let category of categories">
+                            <td scope="col">{{category.categoryId}}</td>
+                            <td scope="col">{{category.categoryName}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <form [formGroup]="categoryAddForm" class="col">
+                    <h3>Ekle</h3>
+
+                    <div class="form-group w-50 mt-3">
+                        <label for="categoryName"><b>Kategori ismi</b></label>
+                        <input type="text" class="form-control" id="categoryName" placeholder="Category Name"
+                            formControlName="categoryName">
+                    </div>
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                </form>
+
+
+
+                <form [formGroup]="categoryDeleteForm" class="col">
+                    <h3>Sil</h3>
+                    <div class="form-group w-50 mt-3">
+                        <label for="categoryId"><b>Kategori ID</b></label>
+                        <input type="number" class="form-control" id="categoryId" placeholder="Category ID"
+                            formControlName="categoryId">
+                    </div>
+                    <button class="btn btn-fill btn-danger" (click)="delete()">Sil</button>
+                </form>
+            </div>
+            </main>
+        </div>
+    </div>
+</body>

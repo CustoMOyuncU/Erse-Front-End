@@ -1,4 +1,4 @@
-window.onload =function(){
+$(window).load(function(){
 $('.autoplay').slick({
     dots: false,
     infinite: false,
@@ -33,4 +33,5 @@ $('.autoplay').slick({
         }
       }
     ]
-  });}
+  });
+})
