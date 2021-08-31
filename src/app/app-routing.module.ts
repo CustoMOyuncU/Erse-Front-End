@@ -26,6 +26,7 @@ const routes: Routes = [
   {path:"human-resources",component:HumanResourcesComponent},
   {path:"production",component:ProductionComponent},
   {path:"contact",component:ContactComponent},
+<<<<<<< HEAD
   {path:"showroom",component:ShowroomComponent},
   {path:"admin-login",component:AdminLoginComponent},
   {path:"admin/brand",component:BrandComponent},
@@ -33,6 +34,9 @@ const routes: Routes = [
   {path:"admin/categories",component:CategoryComponent},
   {path:"admin/clothe",component:ClotheComponent},
   {path:"admin/clothe-image",component:ClotheImageComponent}
+=======
+  {path:"showroom",component:ShowroomComponent}
+>>>>>>> 5432a4307918b469a4c9a58331d36ccc1a26ccf5
 ];
 
 @NgModule({
