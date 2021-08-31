@@ -40,7 +40,7 @@ export class ClotheImageComponent implements OnInit {
       image: ['', Validators.required],
       clotheId: ['', Validators.required]
     });
-    this.clotheImageDeleteForm = this.formBuilder.group({
+    this.clotheImageDeleteForm = this.formBuilder.group({ 
       clotheImageId:["",Validators.required]
     })
   }
