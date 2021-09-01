@@ -7,6 +7,7 @@ import { CategoryComponent } from './components/admin-operations/category/catego
 import { ClotheImageComponent } from './components/admin-operations/clothe-image/clothe-image.component';
 import { ClotheComponent } from './components/admin-operations/clothe/clothe.component';
 import { ColorComponent } from './components/admin-operations/color/color.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { CertificateComponent } from './components/certificate/certificate.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -16,9 +17,12 @@ import { MainComponent } from './components/main/main.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ProductionComponent } from './components/production/production.component';
 import { ShowroomComponent } from './components/showroom/showroom.component';
+import { AdminGuard } from './guards/admin.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:MainComponent},
+  {path:"home",component:MainComponent},
   {path:"about-us",component:AboutUsComponent},
   {path:"company-profile",component:CompanyProfileComponent},
   {path:"environment-information",component:EnvironmentInformationComponent},
@@ -28,9 +32,10 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent},
   {path:"showroom",component:ShowroomComponent},
   {path:"admin-login",component:AdminLoginComponent},
-  {path:"admin/brand",component:BrandComponent},
-  {path:"admin/color",component:ColorComponent},
-  {path:"admin/categories",component:CategoryComponent},
+  {path:"admin-register",component:AdminRegisterComponent},
+  {path:"admin/brand",component:BrandComponent,canActivate:[LoginGuard,AdminGuard]},
+  {path:"admin/color",component:ColorComponent,canActivate:[LoginGuard,AdminGuard]},
+  {path:"admin/categories",component:CategoryComponent,canActivate:[LoginGuard,AdminGuard]},
   {path:"admin/clothe",component:ClotheComponent},
   {path:"admin/clothe-image",component:ClotheImageComponent},
   {path:"showroom",component:ShowroomComponent}

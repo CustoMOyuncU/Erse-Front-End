@@ -1,1 +1,22 @@
-<p>admin-register works!</p>
+<app-navi></app-navi>
+
+<body class="text-center">
+    <form class="form-signin" [formGroup]="registerForm">
+        <img class="mb-4 ml-5" src="https://www.erse.com.tr/images/logo.png" alt="" width="200" height="63">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="firstName" class="sr-only">İsim</label>
+        <input style="border-bottom-left-radius: 0;border-bottom-right-radius: 0;" formControlName="firstName" type="text" id="firstName" class="form-control" placeholder="First name"
+            required autofocus>
+        <label for="lastName" class="sr-only">Soyisim</label>
+        <input style="border-top: none; margin-bottom: 10px;border-top-left-radius: 0;border-top-right-radius: 0;"
+            formControlName="lastName" type="text" id="lastName" class="form-control" placeholder="Last name" required>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"
+            required>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
+            required>
+        <button class="btn btn-lg btn-primary btn-block" (click)="register()">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+</body>

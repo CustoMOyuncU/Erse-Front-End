@@ -11,6 +11,7 @@ import { ClotheService } from 'src/app/services/clothe.service';
 })
 export class ShowroomComponent implements OnInit {
   womenClothes: Clothe[];
+  dataLoaded:boolean =false
 
   constructor(private clotheService: ClotheService) {}
 
@@ -21,6 +22,7 @@ export class ShowroomComponent implements OnInit {
   getClothesByWomenCategory() {
     this.clotheService.getAllClothesByWomenCategory().subscribe((response) => {
       this.womenClothes = response.data;
+      this.dataLoaded=true
       console.log(this.womenClothes);
     });
   }

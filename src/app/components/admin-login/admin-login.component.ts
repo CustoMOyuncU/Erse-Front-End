@@ -1,12 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { LoginModel } from 'src/app/models/loginModel';
-import { RegisterModel } from 'src/app/models/registerModel';
-import { SingleResponseModel } from 'src/app/models/singleResponseModel';
-import { TokenModel } from 'src/app/models/tokenModel';
-import { User } from 'src/app/models/user';
-import { environment } from 'src/environments/environment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-admin-login',
@@ -14,45 +11,40 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./admin-login.component.css'],
 })
 export class AdminLoginComponent implements OnInit {
-  apiUrl=environment.apiUrl
+  loginForm:FormGroup
   constructor(
-    private httpClient: HttpClient,
-    private jwtHelper: JwtHelperService
+    private formBuilder:FormBuilder,
+    private authService:AuthService,
+    private toastrService:ToastrService,
+    private router:Router
   ) {}
 
-  ngOnInit(): void {}
-
-  login(loginModel: LoginModel) {
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(
-      this.apiUrl + 'login',
-      loginModel
-    );
+  ngOnInit(): void {
+    this.createLoginForm()
   }
 
-  register(registerModel: RegisterModel) {
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(
-      this.apiUrl + 'register',
-      registerModel
-    );
+  createLoginForm(){
+    this.loginForm=this.formBuilder.group({
+      email:["",Validators.required],
+      password:["",Validators.required]
+    })
   }
 
-  getUserIdByJwt() {
-    if (this.isAuthenticated()) {
-      return this.jwtHelper.decodeToken(localStorage.getItem('token'))[
-        'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'
-      ];
-    }
-  }
+  login(){
+    if(this.loginForm.valid){
+      let loginModel =Object.assign({},this.loginForm.value)
 
-  updateUser(user: User) {
-    return this.httpClient.post(this.apiUrl + 'updateuser', user);
-  }
+      this.authService.login(loginModel).subscribe(response=>{
+        localStorage.removeItem("token")
+        this.toastrService.info("Giriş yapıldı","Giriş")
+        localStorage.setItem("token",response.data.token)
+        this.router.navigate(["/home"])
+      },responseError=>{
+        this.toastrService.error("Email veya şifre hatalı","Hatalı Giriş")
+      })
 
-  isAuthenticated() {
-    if (localStorage.getItem('token')) {
-      return true;
-    } else {
-      return false;
+    }else{
+      this.toastrService.error("Formunuz eksik","Hata")
     }
   }
 }

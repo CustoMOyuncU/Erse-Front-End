@@ -1,0 +1,8 @@
+.social-link a h6{
+    color: black;
+    transition: color 0.5s;
+}
+.social-link a h6:hover{
+    color: orange;
+    
+}

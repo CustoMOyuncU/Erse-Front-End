@@ -29,6 +29,7 @@ import { ClotheComponent } from './components/admin-operations/clothe/clothe.com
 import { ClotheImageComponent } from './components/admin-operations/clothe-image/clothe-image.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 export function tokenGetter(){
   return localStorage.getItem("token")
@@ -75,7 +76,9 @@ export function tokenGetter(){
       }
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

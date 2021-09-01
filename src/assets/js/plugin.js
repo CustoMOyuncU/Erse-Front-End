@@ -3,9 +3,7 @@ $(window).load(function(){
 (function ($) {
   "use strict";
   // preloader
-  $(window).load(function () {
     $('.preloader').fadeOut('slow');
-  });
   //sticky-menu
   //$(window).on('scroll', function () {
   //  var scroll = $(window).scrollTop();

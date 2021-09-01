@@ -10,12 +10,12 @@
         </div>
         <!-- navigation -->
         <div class="col-xl-8 col-lg-8 col-md-10 nav-wrapper">
-          <nav id="mobile-menu-active">
+          <nav id="mobile-menu-active" >
             <ul>
 
               <li><a href="index.html">Anasayfa</a></li>
               <li><a href="#">Kurumsal</a>
-                <ul class="sub-menu">
+                <ul class="sub-menu" >
                   <li><a routerLink="/about-us">Hakkımızda</a></li>
                   <li><a routerLink="/company-profile">Firma Profili</a></li>
                   <li><a routerLink="/environment-information">Çevre Bilgilendirmesi</a></li>
@@ -28,40 +28,32 @@
               <li><a routerLink="/contact">İletişim</a></li>
 
             </ul>
+            
           </nav>
         </div>
         <!-- header link -->
         <div class="col-xl-2 col-lg-2 d-none d-lg-block link-wrapper">
-          <div class="header-link d-flex align-items-center">
-            <div class="social-link">
-              <h6>Dil Seçimi :</h6>
+          <div class="header-link d-flex align-items-center justify-content-center ">
+            <div class="social-link ml-5" *ngIf="!authenticated">
+              <a routerLink="/admin-login"><h6>Giriş Yapın</h6></a>
+              <a routerLink="/admin-register"><h6>Kayıt Olun</h6></a>
             </div>
-            <div class="lang-opt d-flex align-items-center">
+            <div class="" *ngIf="user">
+              <h6>{{user.firstName}} {{user.lastName}}</h6>
+            </div>
+            <div *ngIf="userId" class="lang-opt">
               <ul>
                 <li>
-                  <div class="flag">
-                    <img src="assets\img\slider\tr.png" alt="Flag">
-                  </div> <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-down mb-2 ml-2"></i>
 
                   <ul class="sub-lang">
                     <li>
-                      <a href="#">
-                        <div class="flag"> <img src="assets\img\slider\tr.png" alt="Flag"></div>
-                        Türkçe
+                      <a href="/home" (click)="deleteToken()">
+                        <div class="flag"></div>
+                        Çıkış
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <div class="flag"> <img src="assets\img\slider\en.png" alt="Flag"></div>
-                        İngilizce
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="flag"> <img src="assets\img\slider\fr.png" alt="Flag"></div>
-                        Fransızca
-                      </a>
-                    </li>
+                    
                   </ul>
                 </li>
               </ul>

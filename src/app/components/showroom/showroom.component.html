@@ -1,6 +1,7 @@
 <head>
   <title>ErseTekstil</title>
 </head>
+<app-navi></app-navi>
 <body>
   <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -8,7 +9,7 @@
 
  
   <!-- preloader -->
-  <!-- <div class="preloader"></div> -->
+  <div class="preloader" *ngIf="!dataLoaded"></div>
 
 
 
